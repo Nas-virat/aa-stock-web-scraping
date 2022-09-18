@@ -5,8 +5,8 @@ import sys
 data = sys.argv
 print(data)
 
-month = 0
-year = 0
+month = '8'
+year = '2022'
 
 if len(data) > 2 :
     

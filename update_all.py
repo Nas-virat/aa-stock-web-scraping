@@ -6,7 +6,7 @@ from v1_Update_result import *
 df_all_stock = pd.read_csv('filter-HK-CODE2.csv')
 
 
-def updateStock(period,url,stock_file,driver):
+def updateStock_(period,url,stock_file,driver):
     
     flag,aa_PL_date,df_PL_aa_stock = get_aa_stock(url,driver)
     print('\nStatus Flag =',flag,'aa_PL_date=',aa_PL_date)
@@ -59,15 +59,15 @@ if __name__ == '__main__':
         # period Y
         url_y = BASE_PL_URL + stockCode 
         stock_file = 'data/y/'+stockCode+'PL-Y.csv'
-        updateStock('Y',url_y,stock_file,driver)
+        updateStock_('Y',url_y,stock_file,driver)
         # period Q
         url_q = BASE_PL_URL  + stockCode + '&period=0'
         stock_file = 'data/q/'+stockCode+'PL-Q.csv'
-        updateStock('Q',url_q,stock_file,driver)
+        updateStock_('Q',url_q,stock_file,driver)
         # period H
         url_h = BASE_PL_URL  + stockCode + '&period=2'
         stock_file = 'data/h/'+stockCode+'PL-H.csv'
-        updateStock('H',url_h,stock_file,driver)
+        updateStock_('H',url_h,stock_file,driver)
         
         
     merge_file()

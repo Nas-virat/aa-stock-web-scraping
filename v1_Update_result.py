@@ -249,7 +249,7 @@ def merge_file():
             #print(pd.concat([df_old,df_new]).drop_duplicates().reset_index(drop=True))
             df_final = pd.concat([df_old,df_new]).drop_duplicates() \
             .reset_index(drop=True)
-            print(df_final)
+            #print(df_final)
             df_final.sort_values(by=[df_final.columns[0]],inplace=True)
             df_final.to_csv('data/'+ period +'/' + file, mode='w', encoding='utf-8-sig', header=None, index=False)
 
