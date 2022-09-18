@@ -27,10 +27,8 @@ def create_visual(filename,period):
         except:
             print('No file in Y')
             return False
-            
-    
-    df = pd.concat([df,df_y])
-    df.sort_values(by=['Closing Date'], inplace=True)
+        df = pd.concat([df,df_y])
+        df.sort_values(by=['Closing Date'], inplace=True)
     
     df.replace('-', '0', inplace=True)
     df['Total Turnover'] = pd.to_numeric(df['Total Turnover'])
